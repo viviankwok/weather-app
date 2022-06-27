@@ -41,3 +41,5 @@ const singaporeData =
       is_day: "yes",
     },
   };
+
+export default singaporeData;

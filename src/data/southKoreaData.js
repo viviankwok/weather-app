@@ -37,3 +37,5 @@ const southKoreaData = {
     is_day: "no",
   },
 };
+
+export default southKoreaData;

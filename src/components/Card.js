@@ -1,4 +1,3 @@
-import { react } from "@babel/types";
 import React, { useContext } from "react";
 import ReactContext from "../context/react.context";
 
@@ -9,7 +8,7 @@ const Card = (props) => {
     <div className="card">
       Card {props.number} here
       <br />
-      {JSON.stringify(reactCtx.post)}
+      JSON string of post: {JSON.stringify(reactCtx.post)}
     </div>
   );
 };

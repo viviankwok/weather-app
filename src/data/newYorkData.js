@@ -40,3 +40,5 @@ const newYorkData = {
     is_day: "yes",
   },
 };
+
+export default newYorkData;
