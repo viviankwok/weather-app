@@ -11,7 +11,7 @@ import southKoreaData from "./data/southKoreaData";
 
 function App() {
   const [input, setInput] = useState("");
-  const [post, setPost] = useState("initial data");
+  const [post, setPost] = useState([]);
 
   // const searchPost = async (input) => {
   //   console.log(`search post activated for "${input}"`);
@@ -20,7 +20,7 @@ function App() {
   //   const data = await response.json();
   //   console.log("data: ", data);
   //   console.log("datatype: ", typeof data);
-  //   setPost(data);
+  //   setPost([data]);
   // };
 
   const searchPost_noApi = (input) => {
@@ -28,16 +28,15 @@ function App() {
     switch (input) {
       case "SINGAPORE":
         console.log("switch to singapore");
-        setPost(singaporeData);
+        setPost([singaporeData]);
         break;
       case "NEW YORK":
         console.log("switch to new york");
-        setPost(newYorkData);
+        setPost([newYorkData]);
         break;
-
       case "SOUTH KOREA":
         console.log("switch to south korea");
-        setPost(southKoreaData);
+        setPost([southKoreaData]);
         break;
     }
   };

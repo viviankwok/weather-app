@@ -6,9 +6,11 @@ const Card = (props) => {
 
   return (
     <div className="card">
-      Card {props.number} here
+      Card component here
+      <h1>{props.location}</h1>
+      current temp: {props.temp}
       <br />
-      JSON string of post: {JSON.stringify(reactCtx.post)}
+      description: {props.des}
     </div>
   );
 };
