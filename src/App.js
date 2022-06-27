@@ -1,11 +1,14 @@
 import React from "react";
-import Parent from "./components/Parent";
+import DisplayGrid from "./components/DisplayGrid";
+import NavBar from "./components/NavBar";
 import "./styles.css";
 
 function App() {
   return (
-    <div>
-      <Parent />
+    <div id="app">
+      Webpage title here in App
+      <NavBar />
+      <DisplayGrid />
     </div>
   );
 }
