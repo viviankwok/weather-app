@@ -28,4 +28,5 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# IGNORE FILES FOR VS CODE
+# IGNORE NODE MODULES 
+node_modules
