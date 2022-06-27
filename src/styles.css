@@ -1,5 +1,40 @@
 :root {
-  --lightBeige: #f4efe5;
-  --sage: #c9ccb5;
-  --grey: #9ba0a4;
+  --yellow: #eed88b;
+  --pink: #d07989;
+  --purple: #79648b;
+  --blue: rgb(54, 71, 122);
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  background-color: rgb(151, 151, 151);
+}
+
+#app {
+  padding: 20px;
+}
+
+#nav-bar {
+  background-color: #79648b;
+  color: whitesmoke;
+  padding: 25px;
+  margin: 15px;
+}
+
+#display-grid {
+  background-color: var(--yellow);
+  padding: 25px;
+  margin: 15px;
+}
+
+.card {
+  background-color: var(--pink);
+  padding: 25px;
+  margin: 15px;
+}
+
+.nav-bar-item {
+  background-color: var(--blue);
+  padding: 25px;
+  margin: 15px;
 }
