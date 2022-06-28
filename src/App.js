@@ -9,6 +9,8 @@ import singaporeData from "./data/singaporeData";
 import newYorkData from "./data/newYorkData";
 import southKoreaData from "./data/southKoreaData";
 
+const displayArr = [];
+
 function App() {
   const [input, setInput] = useState("");
   const [post, setPost] = useState([]);
@@ -20,25 +22,24 @@ function App() {
   //   const data = await response.json();
   //   console.log("data: ", data);
   //   console.log("datatype: ", typeof data);
-  //   setPost([data]);
+  //   displayArr.push(data);
   // };
 
   const searchPost_noApi = (input) => {
     console.log(`search without api for ${input}`);
-    switch (input) {
-      case "SINGAPORE":
-        console.log("switch to singapore");
-        setPost([singaporeData]);
-        break;
-      case "NEW YORK":
-        console.log("switch to new york");
-        setPost([newYorkData]);
-        break;
-      case "SOUTH KOREA":
-        console.log("switch to south korea");
-        setPost([southKoreaData]);
-        break;
+    const input_upperCase = input.toUpperCase();
+    console.log("displayArr before adding ", displayArr);
+
+    if (input_upperCase === "SINGAPORE") {
+      displayArr.push(singaporeData);
+    } else if (input_upperCase === "SOUTH KOREA") {
+      displayArr.push(southKoreaData);
+    } else if (input_upperCase === "NEW YORK") {
+      displayArr.push(newYorkData);
+    } else {
+      alert("Pls enter a valid location for me to pass my project 2 :)");
     }
+    console.log("displayArr after adding ", displayArr);
   };
 
   return (
@@ -49,7 +50,7 @@ function App() {
         <br />
         <SearchBar searchPost={searchPost_noApi} />
         <NavBar />
-        <DisplayGrid />
+        <DisplayGrid displayArr={displayArr} />
       </ReactContext.Provider>
     </div>
   );

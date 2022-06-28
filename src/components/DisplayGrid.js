@@ -3,11 +3,12 @@ import ReactContext from "../context/react.context";
 import Card from "./Card";
 import singaporeData from "../data/singaporeData";
 
-const DisplayGrid = () => {
+const DisplayGrid = (props) => {
   const reactCtx = useContext(ReactContext);
-  console.log("reactCtx post map: ", reactCtx.post);
+  // console.log("reactCtx post map: ", reactCtx.post);
+  console.log("displayArr ", props.displayArr);
 
-  const display = reactCtx.post.map((d) => {
+  const display = props.displayArr.map((d) => {
     return (
       <div>
         <Card

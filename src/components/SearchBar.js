@@ -9,16 +9,16 @@ const SearchBar = (props) => {
     reactCtx.setInput(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleAdd = (e) => {
     e.preventDefault();
-    console.log("handle submit btn clicked");
+    console.log("add btn clicked");
     props.searchPost(reactCtx.input);
     reactCtx.setInput("");
   };
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form>
         <input
           className="input-box"
           type="text"
@@ -26,7 +26,7 @@ const SearchBar = (props) => {
           onChange={handleChange}
           value={reactCtx.input}
         ></input>
-        <button className="button" type="submit">
+        <button className="button" onClick={handleAdd}>
           Add
         </button>
         <br />
