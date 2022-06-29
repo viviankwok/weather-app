@@ -23,13 +23,19 @@ function App() {
     const response = await fetch(url);
     const data = await response.json();
     console.log("data: ", data);
-    console.log("datatype: ", typeof data);
-    if (cards.length < 10) {
-      setCards((prevState) => {
-        return [...prevState, data];
-      });
+
+    if (data.success === false) {
+      alert("Pls enter a valid location for my to pass my project 2 :)");
     } else {
-      alert("Maximum 10 cards. Pls delete one for me to pass my project 2 :)");
+      if (cards.length < 10) {
+        setCards((prevState) => {
+          return [...prevState, data];
+        });
+      } else {
+        alert(
+          "Maximum 10 cards. Pls delete one for me to pass my project 2 :)"
+        );
+      }
     }
   };
 
