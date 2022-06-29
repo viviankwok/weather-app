@@ -11,6 +11,7 @@ const DisplayGrid = (props) => {
   const display = props.displayArr.map((d, i) => {
     return (
       <Card
+        icon={d.current.weather_icons}
         location={d.location.name}
         temp={d.current.temperature}
         des={d.current.weather_descriptions[0]}
