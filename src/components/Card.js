@@ -18,7 +18,14 @@ const Card = (props) => {
 
   return (
     <div className="inline-block align-middle rounded-lg w-44 h-60 drop-shadow-2xl block align-middle bg-yellow opacity-75 p-5 m-2 text-center overflow-x-auto hover:opacity-100">
-      <img src={props.icon} className="w-8 h-8 rounded-full mx-auto my-1"></img>
+      <img
+        src={
+          props.icon === null
+            ? "https://cdn-icons.flaticon.com/png/512/2128/premium/2128152.png?token=exp=1656486991~hmac=cd34e68b280fadbd227035c8aee49539"
+            : props.icon
+        }
+        className="w-8 h-8 rounded-full mx-auto my-1"
+      ></img>
       <div className="font-bold text-lg">{props.location}</div>
       <div className="text-xs">{props.country}</div>
       <div className="flex justify-center align-bottom my-1">
