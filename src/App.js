@@ -25,7 +25,7 @@ function App() {
     console.log("data: ", data);
 
     if (data.success === false) {
-      alert("Pls enter a valid location for my to pass my project 2 :)");
+      alert("Pls enter a valid location for me to pass my project 2 :)");
     } else {
       if (cards.length < 10) {
         setCards((prevState) => {
