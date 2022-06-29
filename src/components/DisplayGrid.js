@@ -1,18 +1,13 @@
-import React, { useContext } from "react";
-import ReactContext from "../context/react.context";
+import React from "react";
 import Card from "./Card";
-import singaporeData from "../data/singaporeData";
 
 const DisplayGrid = (props) => {
-  const reactCtx = useContext(ReactContext);
-  // console.log("reactCtx post map: ", reactCtx.post);
-  console.log("displayArr ", props.displayArr);
-
-  const display = props.displayArr.map((d, i) => {
+  const display = props.cards.map((d, i) => {
     return (
       <Card
         icon={d.current.weather_icons}
         location={d.location.name}
+        country={d.location.country}
         temp={d.current.temperature}
         des={d.current.weather_descriptions[0]}
         removeCard={props.removeCard}

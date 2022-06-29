@@ -10,49 +10,49 @@ import newYorkData from "./data/newYorkData";
 import southKoreaData from "./data/southKoreaData";
 import Quotes from "./components/Quotes";
 
-const displayArr = [];
 const initCardArr = [];
 
 function App() {
   const [input, setInput] = useState("");
-  const [post, setPost] = useState([]);
   const [cards, setCards] = useState(initCardArr);
 
-  // const searchPost = async (input) => {
-  //   console.log(`search post activated for "${input}"`);
-  //   const url = `http://api.weatherstack.com/current?access_key=abf7f3d36b5ca196a0d8346c7b19b02c&query=${input}`;
-  //   const response = await fetch(url);
-  //   const data = await response.json();
-  //   console.log("data: ", data);
-  //   console.log("datatype: ", typeof data);
-  //   displayArr.push(data);
-  // };
+  const searchPost = async (input) => {
+    console.log(`searchPost with api activated for "${input}"`);
 
-  const searchPost_noApi = (input) => {
-    console.log(`search without api for ${input}`);
-    const input_upperCase = input.toUpperCase();
-    console.log("displayArr before adding ", displayArr);
-
-    if (input_upperCase === "SINGAPORE") {
-      displayArr.push(singaporeData);
+    const url = `http://api.weatherstack.com/current?access_key=abf7f3d36b5ca196a0d8346c7b19b02c&query=${input}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log("data: ", data);
+    console.log("datatype: ", typeof data);
+    if (cards.length < 10) {
       setCards((prevState) => {
-        return [...prevState, singaporeData];
-      });
-    } else if (input_upperCase === "SOUTH KOREA") {
-      displayArr.push(southKoreaData);
-      setCards((prevState) => {
-        return [...prevState, southKoreaData];
-      });
-    } else if (input_upperCase === "NEW YORK") {
-      displayArr.push(newYorkData);
-      setCards((prevState) => {
-        return [...prevState, newYorkData];
+        return [...prevState, data];
       });
     } else {
-      alert("Pls enter a valid location for me to pass my project 2 :)");
+      alert("Maximum 10 cards. Pls delete one for me to pass my project 2 :)");
     }
-    console.log("displayArr after adding ", displayArr);
   };
+
+  // const searchPost_noApi = (input) => {
+  //   console.log(`searchPost without api for ${input}`);
+  //   const input_upperCase = input.toUpperCase();
+
+  //   if (input_upperCase === "SINGAPORE") {
+  //     setCards((prevState) => {
+  //       return [...prevState, singaporeData];
+  //     });
+  //   } else if (input_upperCase === "SOUTH KOREA") {
+  //     setCards((prevState) => {
+  //       return [...prevState, southKoreaData];
+  //     });
+  //   } else if (input_upperCase === "NEW YORK") {
+  //     setCards((prevState) => {
+  //       return [...prevState, newYorkData];
+  //     });
+  //   } else {
+  //     alert("Pls enter a valid location for me to pass my project 2 :)");
+  //   }
+  // };
 
   const removeCard = (index) => {
     console.log("remove card activated for card", index);
@@ -62,15 +62,15 @@ function App() {
 
   return (
     <div id="app">
-      <ReactContext.Provider value={{ input, setInput, post, setPost }}>
+      <ReactContext.Provider value={{ input, setInput }}>
         <h1 className="text-4xl flex justify-center font-semibold">
           Weather you like it or not
         </h1>
         <Quotes />
         <br />
-        <SearchBar searchPost={searchPost_noApi} />
+        <SearchBar searchPost={searchPost} />
         {/* <NavBar /> */}
-        <DisplayGrid displayArr={cards} removeCard={removeCard} />
+        <DisplayGrid cards={cards} removeCard={removeCard} />
       </ReactContext.Provider>
     </div>
   );

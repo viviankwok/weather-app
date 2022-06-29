@@ -32,9 +32,6 @@ const SearchBar = (props) => {
         >
           Add
         </button>
-        {/* <br />
-        <br />
-        input here: {reactCtx.input} */}
       </form>
     </div>
   );
