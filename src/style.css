@@ -1,0 +1,62 @@
+:root {
+  /* font-family: "Ubuntu", sans-serif; */
+  font-family: "Neue Haas Grotesk Text", sans-serif;
+
+  /* for vanilla css gradient background */
+  --teal: #b3e1d7;
+  --coral: #f8a8a9;
+  --mustard: #fde7b2;
+  --beige: #efe9e5;
+}
+
+/* for full page background */
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body > * {
+  flex-shrink: 0;
+}
+
+body {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--teal),
+    var(--beige),
+    var(--coral)
+  );
+  background-repeat: no-repeat;
+  height: 1505%;
+  flex-grow: 1;
+}
+
+#app {
+  padding: 20px;
+}
+
+/* #display-grid {
+  margin: 15px;
+  border: 2px solid white;
+} */
+
+/* .card {
+  background-color: var(--mustard);
+  padding: 25px;
+  margin: 15px;
+} */
+
+#nav-bar {
+  background-color: #79648b;
+  color: whitesmoke;
+  padding: 25px;
+  margin: 15px;
+}
+
+.nav-bar-item {
+  background-color: var(--blue);
+  padding: 25px;
+  margin: 15px;
+}

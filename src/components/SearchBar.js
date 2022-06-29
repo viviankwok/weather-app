@@ -17,21 +17,24 @@ const SearchBar = (props) => {
   };
 
   return (
-    <div>
+    <div className="flex justify-center">
       <form>
         <input
-          className="input-box"
+          className="input-box w-80 px-2 py-0.5 rounded drop-shadow-2xl hover:bg-grey text:white"
           type="text"
           placeholder="Weather in..."
           onChange={handleChange}
           value={reactCtx.input}
         ></input>
-        <button className="button" onClick={handleAdd}>
+        <button
+          className="button mx-5 w-24 px-2 py-0.5 bg-white drop-shadow-2xl hover:bg-grey text:white rounded"
+          onClick={handleAdd}
+        >
           Add
         </button>
+        {/* <br />
         <br />
-        <br />
-        input here: {reactCtx.input}
+        input here: {reactCtx.input} */}
       </form>
     </div>
   );

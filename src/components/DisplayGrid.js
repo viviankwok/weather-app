@@ -10,21 +10,16 @@ const DisplayGrid = (props) => {
 
   const display = props.displayArr.map((d) => {
     return (
-      <div>
-        <Card
-          location={d.location.name}
-          temp={d.current.temperature}
-          des={d.current.weather_descriptions[0]}
-        />
-      </div>
+      <Card
+        location={d.location.name}
+        temp={d.current.temperature}
+        des={d.current.weather_descriptions[0]}
+      />
     );
   });
 
   return (
-    <div id="display-grid">
-      DisplayGrid here
-      {display}
-    </div>
+    <div className="grid gap-2 grid-cols-5 grid-rows-2 m-5">{display}</div>
   );
 };
 
