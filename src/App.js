@@ -11,10 +11,12 @@ import southKoreaData from "./data/southKoreaData";
 import Quotes from "./components/Quotes";
 
 const displayArr = [];
+const initCardArr = [];
 
 function App() {
   const [input, setInput] = useState("");
   const [post, setPost] = useState([]);
+  const [cards, setCards] = useState(initCardArr);
 
   // const searchPost = async (input) => {
   //   console.log(`search post activated for "${input}"`);
@@ -33,14 +35,29 @@ function App() {
 
     if (input_upperCase === "SINGAPORE") {
       displayArr.push(singaporeData);
+      setCards((prevState) => {
+        return [...prevState, singaporeData];
+      });
     } else if (input_upperCase === "SOUTH KOREA") {
       displayArr.push(southKoreaData);
+      setCards((prevState) => {
+        return [...prevState, southKoreaData];
+      });
     } else if (input_upperCase === "NEW YORK") {
       displayArr.push(newYorkData);
+      setCards((prevState) => {
+        return [...prevState, newYorkData];
+      });
     } else {
       alert("Pls enter a valid location for me to pass my project 2 :)");
     }
     console.log("displayArr after adding ", displayArr);
+  };
+
+  const removeCard = (index) => {
+    console.log("remove card activated for card", index);
+    const workingCardArr = cards.filter((d, i) => i !== index);
+    setCards(workingCardArr);
   };
 
   return (
@@ -53,7 +70,7 @@ function App() {
         <br />
         <SearchBar searchPost={searchPost_noApi} />
         {/* <NavBar /> */}
-        <DisplayGrid displayArr={displayArr} />
+        <DisplayGrid displayArr={cards} removeCard={removeCard} />
       </ReactContext.Provider>
     </div>
   );

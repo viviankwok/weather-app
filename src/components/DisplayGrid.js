@@ -8,12 +8,14 @@ const DisplayGrid = (props) => {
   // console.log("reactCtx post map: ", reactCtx.post);
   console.log("displayArr ", props.displayArr);
 
-  const display = props.displayArr.map((d) => {
+  const display = props.displayArr.map((d, i) => {
     return (
       <Card
         location={d.location.name}
         temp={d.current.temperature}
         des={d.current.weather_descriptions[0]}
+        removeCard={props.removeCard}
+        i={i}
       />
     );
   });
