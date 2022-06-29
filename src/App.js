@@ -3,11 +3,12 @@ import DisplayGrid from "./components/DisplayGrid";
 import SearchBar from "./components/SearchBar";
 import NavBar from "./components/NavBar";
 import ReactContext from "./context/react.context";
-import "./styles.css";
+import "./style.css";
 
 import singaporeData from "./data/singaporeData";
 import newYorkData from "./data/newYorkData";
 import southKoreaData from "./data/southKoreaData";
+import Quotes from "./components/Quotes";
 
 const displayArr = [];
 
@@ -45,11 +46,13 @@ function App() {
   return (
     <div id="app">
       <ReactContext.Provider value={{ input, setInput, post, setPost }}>
-        Webpage title here in App
-        <br />
+        <h1 className="text-4xl flex justify-center font-semibold">
+          Weather you like it or not
+        </h1>
+        <Quotes />
         <br />
         <SearchBar searchPost={searchPost_noApi} />
-        <NavBar />
+        {/* <NavBar /> */}
         <DisplayGrid displayArr={displayArr} />
       </ReactContext.Provider>
     </div>
