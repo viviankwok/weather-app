@@ -29,6 +29,7 @@ body {
     var(--coral)
   );
   background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 1505%;
   flex-grow: 1;
 }

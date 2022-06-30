@@ -17,7 +17,8 @@ const DisplayGrid = (props) => {
   });
 
   return (
-    <div className="grid gap-2 grid-cols-5 grid-rows-2 m-5">{display}</div>
+    // <div className="grid gap-2 grid-cols-5 grid-rows-2 m-5">{display}</div>
+    <div className="m-5">{display}</div>
   );
 };
 

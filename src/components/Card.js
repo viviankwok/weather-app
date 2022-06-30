@@ -17,7 +17,7 @@ const Card = (props) => {
   };
 
   return (
-    <div className="inline-block align-middle rounded-lg w-44 h-60 drop-shadow-2xl block align-middle bg-yellow opacity-75 p-5 m-2 text-center overflow-x-auto hover:opacity-100">
+    <div className="inline-block align-middle rounded-lg w-44 h-64 drop-shadow-2xl block align-middle bg-yellow opacity-75 p-5 m-2 text-center cursor-copy hover:opacity-100">
       <img
         src={
           props.icon === null
@@ -42,7 +42,7 @@ const Card = (props) => {
           onMouseOver={redBin}
           onMouseOut={blackBin}
           onClick={() => props.removeCard(props.i)}
-          className="w-6 h-6 my-3"
+          className="w-6 h-6 my-3 cursor-pointer"
         ></img>
       </div>
     </div>
