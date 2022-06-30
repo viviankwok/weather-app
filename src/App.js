@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import DisplayGrid from "./components/DisplayGrid";
 import SearchBar from "./components/SearchBar";
-import NavBar from "./components/NavBar";
 import ReactContext from "./context/react.context";
 import "./style.css";
 
