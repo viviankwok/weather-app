@@ -14,7 +14,6 @@ const Quotes = () => {
     "you still don't understand Redux",
     "your struggles now may be insignificant 5 years down the road",
     "comparisons should be done against your past self, not others",
-    "",
   ];
 
   console.log(`quotesArr.length ${quotesArr.length}`);
