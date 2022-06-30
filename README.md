@@ -33,4 +33,4 @@ The following tools/skills were used in developing this project:
 
 ## Wireframe
 
-![wireframe](/public/wireframe2.png)
+![wireframe](/public/wireframe_v2.png)
