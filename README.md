@@ -31,6 +31,6 @@ The following tools/skills were used in developing this project:
 3. Tailwind & CSS
 4. React
 
-## Wireframes
+## Wireframe
 
 ![wireframe](/public/wireframe.png)
