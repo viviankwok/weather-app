@@ -17,7 +17,7 @@ const Card = (props) => {
   };
 
   return (
-    <div className="inline-block align-middle rounded-lg w-44 h-64 drop-shadow-2xl block align-middle bg-yellow opacity-75 p-5 m-2 text-center cursor-copy hover:opacity-100">
+    <div className="inline-block align-middle rounded-lg w-44 h-64 drop-shadow-2xl block align-middle bg-yellow opacity-75 p-5 m-2 text-center hover:opacity-100">
       <img
         src={
           props.icon === null
